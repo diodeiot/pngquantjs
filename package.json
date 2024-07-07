@@ -1,0 +1,50 @@
+{
+  "name": "pngquantjs",
+  "version": "0.9.0",
+  "description": "native nodejs module for pngquant library",
+  "author": "Kadir Sevil <kadir.sevil@diodeiot.com>",
+  "maintainers": [
+    "Kadir Sevil <kadir.sevil@diodeiot.com>"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/diodeiot/pngquantjs.git"
+  },
+  "keywords": [
+    "imagemin",
+    "compress",
+    "image",
+    "img",
+    "minify",
+    "optimize",
+    "png",
+    "pngquant",
+    "libimagequant",
+    "addon",
+    "rust",
+    "native"
+  ],
+  "files": [
+    "assets",
+    "buildjs",
+    "src",
+    "test",
+    "third_party/libimagequant",
+    "Cargo.toml"
+  ],
+  "main": "buildjs/index.js",
+  "scripts": {
+    "prepack": "node install/cleanbuild.js && tsc && yarn postinstall && yarn test",
+    "test": "node test/index.test.js",
+    "postinstall": "cargo build --release --message-format=json > cargo.log && npx neon dist < cargo.log"
+  },
+  "dependencies": {
+    "@neon-rs/cli": "^0.1.73"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "pngjs": "^7.0.0",
+    "typescript": "^5.5.3"
+  }
+}

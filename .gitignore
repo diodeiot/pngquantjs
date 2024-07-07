@@ -1,0 +1,9 @@
+#macos
+.DS_Store
+**/.DS_Store
+
+buildjs/
+node_modules/
+target/
+/cargo.log
+/index.node

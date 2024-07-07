@@ -1,0 +1,15 @@
+[package]
+name = "pngquantjs"
+version = "1.0.0"
+description = "Wrapper around official pngquant library"
+authors = ["Kadir Sevil <kadir.sevil@diodeiot.com>"]
+license = "MIT"
+edition = "2021"
+exclude = ["index.node"]
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+neon = "1"
+imagequant = { path = "third_party/libimagequant" }

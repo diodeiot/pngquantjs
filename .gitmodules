@@ -1,0 +1,3 @@
+[submodule "third_party/libimagequant"]
+	path = third_party/libimagequant
+	url = https://github.com/ImageOptim/libimagequant
