@@ -4,6 +4,9 @@ pngquantjs is a native nodejs module for pngquant library
 see https://github.com/ImageOptim/libimagequant
 
 > [!WARNING]  
+> Curently this package can only run on unix-like systems
+
+> [!WARNING]  
 > Currently this package doesn't use pre-built binaries. It builds addon from source code while package is installed. Compilation process uses `cargo` so this binary should be in the path.
 
 ## Install
