@@ -49,6 +49,7 @@ test();
 git clone https://github.com/diodeiot/pngquantjs --recursive
 cd pngquantjs
 yarn
+yarn build
 ```
 
 When contributing code, please write relevant tests and run `npm test` before submitting pull requests.
