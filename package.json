@@ -35,9 +35,11 @@
   ],
   "main": "buildjs/index.js",
   "scripts": {
-    "prepack": "node install/cleanbuild.js && tsc && yarn postinstall && yarn test",
+    "build:addon": "cargo build --release --message-format=json > cargo.log && npx neon dist < cargo.log",
+    "build": "yarn build:addon && node install/cleanbuild.js && tsc",
+    "prepack": "yarn build && yarn test",
     "test": "node test/index.test.js",
-    "postinstall": "cargo build --release --message-format=json > cargo.log && npx neon dist < cargo.log"
+    "postinstall": "yarn build:addon"
   },
   "dependencies": {
     "@neon-rs/cli": "^0.1.73"
